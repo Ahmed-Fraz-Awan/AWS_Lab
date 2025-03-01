@@ -1,7 +1,10 @@
 # AWS_Lab
-<html>
-<body>
-<h1>Ahmed Fraz Profile</h1>
-<p>Cloud Computing Enthusiast</p>
-</body>
-</html>
+<button onclick="fetchData()">Get Message</button>
+<p id="message"></p>
+<script>
+    async function fetchData() {
+        const response = await fetch('YOUR_API_GATEWAY_URL');
+        const data = await response.json();
+        document.getElementById('message').textContent = data.message;
+    }
+</script>
